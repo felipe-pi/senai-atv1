@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade01 Lógica de Programação</title>
+</head>
+<body>
+    <script>
+        function encerrar(resp){
+            resp = prompt("Deseja encerrar digite 's' para sim e 'n' para não")
+            return resp
+        }
+        saldo = parseFloat(prompt("Digite o Saldo"))
+        finalizar = encerrar()
+        //finalizar = prompt("Deseja encerrar digite 's' para sim e 'n' para não")
+        while (finalizar != 's'){
+            tpentrada = parseInt(prompt("Para compra digite 1 para venda digite 2"))
+            
+            if (tpentrada == 1){
+                qtd = parseFloat(prompt("Digite a quantidade para compra:"))
+                saldo = saldo + qtd
+                alert("Seu novo saldo é: " + saldo)
+                //finalizar = prompt("Deseja encerrar digite 's' para sim e 'n' para não")
+                finalizar = encerrar()
+            }
+            else if (tpentrada==2){
+                qtd = parseFloat(prompt("Digite a quantidade para venda:"))
+                if (saldo <= qtd){
+                    alert("Saldo insuficiente!!!!")
+                    //finalizar = prompt("Deseja encerrar digite 's' para sim e 'n' para não")
+                    finalizar = encerrar()
+                }else{
+                    saldo = saldo - qtd
+                    alert("Seu novo saldo é: " + saldo)
+                    //finalizar = prompt("Deseja encerrar digite 's' para sim e 'n' para não")
+                    finalizar = encerrar()
+                }
+            }
+        }
+        alert("Programa Encerrado!!!")    
+    </script>s
+</body>
+</html>
